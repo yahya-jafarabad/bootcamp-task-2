@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تسک دوره جاوااسکریپت</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="../src/styles/tailwind.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body class="bg-gray-200">
+    <div class="container xl:max-w-screen-xl font-['vazir'] text-center">
+      <div class="flex justify-between items-center my-8 px-8">
+        <p class="">لیست تراکنش های شما</p>
+        <div
+          class="search-box flex flex-row items-center justify-between bg-white rounded-lg overflow-hidden min-w-80"
+        >
+          <input
+            type="text"
+            maxlength="9"
+            class="search-input p-3 placeholder:text-xs outline-none text-sm text-gray-500"
+            placeholder="شماره پیگیری را وارد کنید..."
+          />
+          <span class="fa fa-search ml-3 text-gray-400"></span>
+        </div>
+      </div>
+      <section class="px-8" id="dom_transactions">
+        <div class="main-content bg-gray-100 p-4 rounded-lg">
+          <table class="w-full rounded-lg bg-gray-100 overflow-hidden">
+            <thead class="bg-gray-200">
+              <tr class="">
+                <th class="p-4">ردیف</th>
+                <th class="">نوع تراکنش</th>
+                <th class="table-price cursor-pointer">
+                  <div class="select_sort">
+                    <select id="sort_price" data-set="price">
+                      <option value="desc">صعودی</option>
+                      <option value="asc">نزولی</option>
+                    </select>
+                  </div>
+                  <span class="price-title">مبلغ</span>
+                  <span class="fa fa-chevron-down mr-2"></span>
+                  <div class="hidden"></div>
+                </th>
+                <th class="">شماره پیگیری</th>
+                <th class="table-date cursor-pointer">
+                  <div class="select_sort">
+                    <select id="sort_date" data-set="date">
+                      <option value="desc">آخرین تراکنش</option>
+                      <option value="asc">اولین تراکنش</option>
+                    </select>
+                  </div>
+                  <span class="date-title">تاریخ تراکنش</span>
+                  <span class="fa fa-chevron-down mr-2"></span>
+                </th>
+              </tr>
+            </thead>
+            <tbody class="dom-transactions-list">
+              <!-- <tbody class="border border-gray-300">
+                <tr class="border">
+                  <td class="p-4" id="row">1</td>
+                  <td class="" id="transaction">افزایش اعتبار</td>
+                  <td class="" id="price">1,000,000</td>
+                  <td class="" id="tracking">123456</td>
+                  <td class="" id="date">تاریخ</td>
+                </tr>
+              </tbody> -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <button
+        class="get-transactions py-4 px-16 bg-primary mt-10 text-white rounded-lg"
+      >
+        بارگذاری تراکنش ها
+      </button>
+    </div>
+
+    <script src="./js/index.js"></script>
+  </body>
+</html>
